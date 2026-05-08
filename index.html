@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>报名入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            /* 这里可以换成你的海报背景图链接 */
+            background: url('haibao.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+            font-family: "微软雅黑", sans-serif;
+        }
+        /* 中间报名按钮 */
+        .join-btn {
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 40px;
+            background: #ff6600;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255,102,0,0.4);
+        }
+        /* 弹窗遮罩 */
+        .mask {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 999;
+        }
+        /* 问卷弹窗容器 */
+        .popup {
+            width: 90%;
+            height: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 报名按钮 -->
+    <button class="join-btn" onclick="showPopup()">立即报名</button>
+
+    <!-- 问卷弹窗 -->
+    <div class="mask" id="mask">
+        <div class="popup">
+            <span class="close" onclick="hidePopup()">×</span>
+            <iframe src="https://wj.qq.com/s2/26581786/7735/"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function showPopup(){
+            document.getElementById('mask').style.display = 'block';
+        }
+        function hidePopup(){
+            document.getElementById('mask').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
